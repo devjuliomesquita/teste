@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth_login
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+      format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 402654233491-dnaerp6r2eco1silfl46lnj6h1so0sgs.apps.googleusercontent.com
+            clientSecret: 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
+            scope:
+              - email
+              - profile
+server:
+  port: 8081
